@@ -10,6 +10,9 @@ import MyNavbar from '../components/MyNavbar/MyNavbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import fbConnection from '../helpers/data/connection';
+import EditScat from '../components/EditScat/EditScat';
+import SingleScat from '../components/SingleScat/SingleScat';
+import NewScat from '../components/NewScat/NewScat';
 
 fbConnection();
 
@@ -61,6 +64,11 @@ class App extends React.Component {
             <Switch>
               <PublicRoute path='/auth' component={Auth} authed={authed}/>
               <PrivateRoute path='/home' component={Home} authed={authed}/>
+
+              <PrivateRoute path='/new' component={NewScat} authed={authed}/>
+              <PrivateRoute path='/edit/:id' component={EditScat} authed={authed}/>
+              <PrivateRoute path='/scat/:id' component={SingleScat} authed={authed}/>
+
               <Redirect from='*' to='/auth' />
             </Switch>>
           </div>
