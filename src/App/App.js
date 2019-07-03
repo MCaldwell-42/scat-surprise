@@ -70,7 +70,7 @@ class App extends React.Component {
               <PrivateRoute path='/scat/:id' component={SingleScat} authed={authed}/>
 
               <Redirect from='*' to='/auth' />
-            </Switch>>
+            </Switch>
           </div>
         </div>
       </React.Fragment>
