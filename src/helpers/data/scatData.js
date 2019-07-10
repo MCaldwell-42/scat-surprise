@@ -25,6 +25,8 @@ const getSingleScat = scatId => axios.get(`${firebaseUrl}/scats/${scatId}.json`)
 
 const postScat = newScat => axios.post(`${firebaseUrl}/scats.json`, newScat);
 
+const putScat = (updatedScat, scatId) => axios.put(`${firebaseUrl}/scats/${scatId}.json`, updatedScat);
+
 export default {
-  getScat, deleteScat, getSingleScat, postScat,
+  getScat, deleteScat, getSingleScat, postScat, putScat,
 };
